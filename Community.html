@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibrant Community</title>
+    <link rel="stylesheet" href="Community.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>🌟 Active Community Members</h1>
+        <div class="profiles">
+            <!-- Profile 1 -->
+            <div class="profile" style="animation-delay: 0.1s">
+                <img src="https://th.bing.com/th/id/OIP.XGGWFUXDaFYA6j0IASTphwAAAA?rs=1&pid=ImgDetMain" alt="Rahul Verma">
+                <h3>Shruti</h3>
+                <p>Digital Marketer 🚀</p>
+                <div class="activity">
+                    <span>📈 2.4k Followers</span>
+                    <span>💼 Mumbai</span>
+                </div>
+                <button class="follow-button">Follow</button>
+            </div>
+
+            <!-- Profile 2 -->
+            <div class="profile" style="animation-delay: 0.2s">
+                <img src="https://images.picxy.com/cache/2020/8/9/b44bbcd252f8cb996ee2a24f442d7ca7.jpg" alt="Priya Patel">
+                <h3>Pritesh Patel</h3>
+                <p>UX Designer 🎨</p>
+                <div class="activity">
+                    <span>📈 1.8k Followers</span>
+                    <span>💼 Bangalore</span>
+                </div>
+                <button class="follow-button">Follow</button>
+            </div>
+
+            <!-- Profile 3 -->
+            <div class="profile" style="animation-delay: 0.3s">
+                <img src="https://th.bing.com/th/id/OIP.EurY2mtVNQUCAFnmmuBrxgAAAA?rs=1&pid=ImgDetMain" alt="Arjun Singh">
+                <h3>Arunima Singh</h3>
+                <p>Full Stack Dev 💻</p>
+                <div class="activity">
+                    <span>📈 3.1k Followers</span>
+                    <span>💼 Delhi</span>
+                </div>
+                <button class="follow-button">Follow</button>
+            </div>
+
+            <!-- Profile 4 -->
+            <div class="profile" style="animation-delay: 0.4s">
+                <img src="https://th.bing.com/th/id/OIP.SxTtp9BU-DvGcrRltm-IHAHaEK?w=1280&h=720&rs=1&pid=ImgDetMain" alt="Neha Gupta">
+                <h3>Neha Gupta</h3>
+                <p>Content Creator ✍️</p>
+                <div class="activity">
+                    <span>📈 4.2k Followers</span>
+                    <span>💼 Kolkata</span>
+                </div>
+                <button class="follow-button">Follow</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Floating leaves animation
+        function createLeaf() {
+            const leaf = document.createElement('div');
+            leaf.className = 'leaf';
+            leaf.innerHTML = '🍃';
+            leaf.style.left = Math.random() * 100 + 'vw';
+            leaf.style.top = Math.random() * 100 + 'vh';
+            leaf.style.animationDuration = (Math.random() * 2 + 1) + 's';
+            document.body.appendChild(leaf);
+            
+            setTimeout(() => leaf.remove(), 3000);
+        }
+        setInterval(createLeaf, 300);
+
+        // Follow button interaction
+        document.querySelectorAll('.follow-button').forEach(button => {
+            button.addEventListener('click', function() {
+                this.innerHTML = 'Following ✓';
+                this.style.background = '#56ab2f';
+                this.style.color = '#fff';
+                setTimeout(() => {
+                    this.innerHTML = 'Follow';
+                    this.style.background = '#ffcc00';
+                    this.style.color = '#333';
+                }, 2000);
+            });
+        });
+
+        // Hover heart animation
+        document.querySelectorAll('.profile img').forEach(img => {
+            img.addEventListener('mouseover', function() {
+                const heart = document.createElement('div');
+                heart.innerHTML = '💚';
+                heart.style.position = 'absolute';
+                heart.style.fontSize = '20px';
+                heart.style.animation = 'float 1s ease-out forwards';
+                this.parentElement.appendChild(heart);
+                setTimeout(() => heart.remove(), 1000);
+            });
+        });
+    </script>
+</body>
+</html>

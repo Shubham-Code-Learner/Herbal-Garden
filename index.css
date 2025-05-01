@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Support Icon */
+.support-icon {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #2e7d32;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.support-icon:hover {
+    background: #1b5e20;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.support-icon i {
+    font-size: 28px;
+}
+
+
+
+/* Navigation Bar */
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    border-radius: 0 0 15px 15px;
+    transition: all 0.3s ease;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2e7d32;
+    display: flex;
+    align-items: center;
+    animation: slideIn 1s ease;
+}
+
+.logo i {
+    margin-right: 10px;
+    color: #2e7d32;
+    font-size: 32px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    border-radius: 25px;
+}
+
+.nav-links a:hover {
+    background: #c8e6c9;
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(123, 182, 125, 0.8), rgba(76, 175, 80, 0.8)),
+                url('https://designbx.com/wp-content/uploads/2017/11/herbs-in-large-pot.jpg') center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+
+    
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin-top: 70px;
+    animation: fadeIn 1.5s ease;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+
+
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    animation: slideUp 1s ease;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    animation: slideUp 1s ease 0.2s backwards;
+}
+
+
+/* Features Section */
+.features {
+    padding: 80px 20px;
+    text-align: center;
+    background: white;
+}
+
+.feature-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 300px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.card i {
+    font-size: 50px;
+    color: #2e7d32;
+    margin-bottom: 20px;
+}
+
+/* About Section */
+.about-section {
+    padding: 80px 20px;
+    background: #f8fbf8;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-content h2 {
+    font-size: 2.5em;
+    color: #2e7d32;
+    margin-bottom: 30px;
+}
+
+.about-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.about-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 300px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-20px);
+}
+
+.about-card i {
+    font-size: 40px;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+/* Herb Cards Section */
+.herb-section {
+    padding: 80px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.herb-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.herb-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.herb-card {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.herb-card:hover {
+    transform: translateY(-10px);
+}
+
+.herb-image {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.herb-actions {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #666;
+}
+
+.action-btn:hover {
+    background: #c8e6c9;
+}
+
+.action-btn.active.heart {
+    color: #ff0000;
+}
+
+.action-btn.active.bookmark {
+    color: #2196F3;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from { transform: translateX(-100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .hero h1 {
+        font-size: 2.5em;
+    }
+}

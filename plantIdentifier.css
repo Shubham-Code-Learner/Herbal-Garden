@@ -1,0 +1,59 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: url(background.jpg) no-repeat center center fixed ;
+    background-size: cover;
+    text-align: center;
+    padding: 20px;
+}
+
+.card {
+    background: rgba(220, 255, 220, 0.7);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 128, 0, 0.2);
+    width: 90%;
+    max-width: 380px;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+    color: #2a6f2a;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    /* Ensures the image covers the area without distortion */
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+
+.capture-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.capture-btn:hover {
+    background: #45a049;
+}

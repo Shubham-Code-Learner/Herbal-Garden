@@ -1,0 +1,77 @@
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #d4edda, #a8df8e);
+    text-align: center;
+}
+
+/* Title Styling */
+.title {
+    font-size: 28px;
+    color: #2e7d32;
+    margin-top: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Tour Box */
+.tour-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+.garden-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2e7d32;
+    margin-top: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Animated Frame */
+.tour-frame {
+    width: 90%;
+    max-width: 900px;
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 6px solid rgba(46, 125, 50, 0.8);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(0.9);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+/* Hover Effect */
+.tour-frame:hover {
+    transform: scale(1);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* iframe styling */
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 22px;
+    }
+    
+    .tour-frame {
+        width: 95%;
+        height: 400px;
+    }
+}

@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url(chatbot\ background.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#chat-container {
+    width: 700px;
+    background-color: rgba(25, 60, 25, 0.9);
+    border-radius: 20px;
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.5);
+    padding: 25px;
+}
+
+#chat-output {
+    height: 300px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    background-color: rgba(40, 100, 40, 0.75);
+    color: white;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#mic-btn, #send-btn {
+    background-color: #3b8f3b;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#mic-btn:hover, #send-btn:hover {
+    background-color: #0056b3;
+}
+
+#text-input {
+    width: 60%;
+    padding: 10px;
+    margin-right: 25px;
+    margin-left: 25px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+}
+
+/* Loading spinner animation */
+.loading-spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

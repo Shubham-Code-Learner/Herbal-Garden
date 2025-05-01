@@ -1,0 +1,219 @@
+/* 🌱 General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('https://images.pexels.com/photos/1927725/pexels-photo-1927725.jpeg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* 🍃 Overlay Effect */
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+/* 🌿 Chat Container */
+.chat-container {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 420px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    animation: fadeIn 1s ease-in-out, bounce 1.5s infinite alternate;
+}
+
+/* 🍀 Fade-In and Bounce Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(5px); }
+}
+
+/* 🌵 Chat Box */
+.chat-box {
+    padding: 20px;
+    height: 350px;
+    overflow-y: auto;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    scrollbar-width: thin;
+    scrollbar-color: #4caf50 #e3f2fd;
+}
+
+/* 🌲 Custom Scrollbar */
+.chat-box::-webkit-scrollbar {
+    width: 6px;
+}
+chat-box::-webkit-scrollbar-thumb {
+    background: #4caf50;
+    border-radius: 10px;
+}
+
+/* 💬 Messages */
+.message {
+    margin: 12px 0;
+    padding: 14px;
+    border-radius: 10px;
+    opacity: 0;
+    animation: slideUp 0.5s ease-in-out forwards, pulseGlow 1.5s infinite alternate;
+    max-width: 80%;
+    cursor: grab; /* Enable movable */
+}
+
+/* 🍂 Slide Up and Glow Animations */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0px); }
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 5px rgba(0, 255, 0, 0.4); }
+    100% { box-shadow: 0 0 15px rgba(0, 255, 0, 0.7); }
+}
+
+/* 🌼 User & Bot Messages */
+.bot-message {
+    background: linear-gradient(to right, #d4fc79, #96e6a1);
+    color: black;
+    text-align: left;
+    align-self: flex-start;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.user-message {
+    background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+    color: black;
+    text-align: right;
+    align-self: flex-end;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 🌺 Typing Effect */
+.typing {
+    font-style: italic;
+    color: #555;
+    display: inline-block;
+    opacity: 0;
+    animation: typingEffect 1s linear infinite;
+}
+
+@keyframes typingEffect {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* 🌻 Input & Buttons */
+.input-container {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+/* 🍏 Input Box */
+#text-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* 🍊 Buttons */
+#send-btn, #mic-btn {
+    margin-left: 10px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(to right, #ff9966, #ff5e62);
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s ease-in-out, background 0.5s ease-in-out;
+}
+
+/* 🌟 Button Hover Effect */
+#send-btn:hover, #mic-btn:hover {
+    transform: scale(1.1);
+    background: linear-gradient(to right, #4caf50, #2e7d32);
+}
+
+/* 🎤 Microphone Button Animation */
+#mic-btn.listening {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 10px rgba(255, 94, 98, 0.5); }
+    50% { transform: scale(1.2); box-shadow: 0 0 20px rgba(255, 94, 98, 0.8); }
+    100% { transform: scale(1); box-shadow: 0 0 10px rgba(255, 94, 98, 0.5); }
+}
+
+/* ⏳ Loading Animation */
+.loading {
+    display: none;
+    text-align: center;
+    font-style: italic;
+    color: white;
+    font-size: 14px;
+    padding: 10px;
+    animation: fadeBlink 1s infinite;
+}
+
+@keyframes fadeBlink {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+/* 🍃 Movable Pictures */
+.picture {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+    cursor: move;
+    position: absolute; /* Make the picture movable */
+    transition: transform 0.2s;
+}
+
+.picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.picture:active {
+    transform: scale(1.1); /* Enlarge the picture when grabbed */
+}
+
+/* 🎥 Movable Animation (draggable) */
+@keyframes drag {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(100px, 100px); }
+}
+
+.picture.dragging {
+    animation: drag 0.2s ease-in-out;
+}

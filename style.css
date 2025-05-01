@@ -1,0 +1,116 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('https://source.unsplash.com/1600x900/?plants,nature') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Chat Container */
+.chat-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 420px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1s ease-in-out;
+    background-image: url('https://source.unsplash.com/400x400/?leaves,green');
+    background-size: cover;
+    background-blend-mode: overlay;
+}
+
+/* Chat Box */
+.chat-box {
+    padding: 20px;
+    height: 350px;
+    overflow-y: auto;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    scrollbar-width: thin;
+    scrollbar-color: #4caf50 #e3f2fd;
+}
+
+/* Custom Scrollbar */
+.chat-box::-webkit-scrollbar {
+    width: 6px;
+}
+.chat-box::-webkit-scrollbar-thumb {
+    background: #4caf50;
+    border-radius: 10px;
+}
+
+/* Messages */
+.message {
+    margin: 12px 0;
+    padding: 14px;
+    border-radius: 10px;
+    opacity: 0;
+    animation: slideUp 0.5s ease-in-out forwards;
+    max-width: 80%;
+}
+
+/* Bot & User Messages */
+.bot-message {
+    background: linear-gradient(to right, #a8e6cf, #dcedc1);
+    color: black;
+    text-align: left;
+    align-self: flex-start;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+}
+
+.bot-message::before {
+    content: "🌿";
+    margin-right: 8px;
+}
+
+.user-message {
+    background: linear-gradient(to right, #ffab40, #ffcc80);
+    color: black;
+    text-align: right;
+    align-self: flex-end;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Input & Buttons */
+.input-container {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+#text-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+#send-btn, #mic-btn {
+    margin-left: 10px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(to right, #4caf50, #2e7d32);
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s ease-in-out;
+}
+
+#send-btn:hover, #mic-btn:hover {
+    transform: scale(1.1);
+}
